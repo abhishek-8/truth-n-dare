@@ -1,0 +1,83 @@
+body{
+  overflow: hidden;
+  background-color:#e3f2fd;
+}
+
+#def_dp{
+  height:40px;
+  width:40px;
+}
+
+nav,p,span {
+  font-family:'Ubuntu';
+}
+
+span{
+  color: white;
+}
+
+#grpchat,#rest
+{
+     height:88%;
+}
+#rest{
+  width:72%;
+  margin-left:20px;
+  position:relative;
+}
+
+#grp_chat{
+  height:92%;
+}
+
+#chat_window {
+  border-radius:5px;
+ /* border:1px solid;*/
+  position:fixed;
+  width:230px;
+  margin-left:3px;
+  height:230px;
+  bottom: 40px;
+}
+
+#chat_head {
+  border-radius:5px;
+  border:1px solid;
+  position:relative;
+ /* display: inline-flex;*/
+  width:232px;
+  height:30px;
+  margin-top:220px;
+  bottom: 0px;
+}
+
+#frnds {
+  border-radius:5px;
+ /* border:1px solid;*/
+  position:fixed;
+  width:230px;
+  margin-left:3px;
+  height:230px;
+  bottom: 20px;
+  right: 50px;
+}
+
+#frnds_head {
+  border-radius:5px;
+  border:1px solid;
+  position:absolute;
+ /* display: inline-flex;*/
+  width:232px;
+  height:30px;
+  bottom: 0;
+}
+
+.profile{
+     color: black;
+}
+
+#myCanvas {
+              margin-left:20%; 
+              margin-top:7%;
+              position:fixed;
+}

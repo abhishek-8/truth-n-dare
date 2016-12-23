@@ -1,0 +1,172 @@
+
+function contract() {
+  // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+
+    var url = "../chat1.php";
+    
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("chat_window").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(); // Actually execute the request
+    document.getElementById("chat_window").innerHTML = "";
+}
+
+function expand() {
+
+  // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+
+    var url ="../chat2.php";
+    
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("chat_window").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(); // Actually execute the request
+    document.getElementById("chat_window").innerHTML = "";
+}
+//group chat 
+function disp2() {
+    
+    var y=textbox.elements['message'].value;
+      
+    if(y!="")
+        document.getElementById('grp_chat').innerHTML=document.getElementById('grp_chat').innerHTML+"You : "+y+"\n";
+
+    document.getElementById('textbox').reset();
+
+    return false;
+    
+}
+//one-one chat
+function disp() {
+    var x=typebox.elements['msg'].value;
+    if(x!="")
+        document.getElementById('window').innerHTML=document.getElementById('window').innerHTML+"You: "+x+"\n";
+    
+    document.getElementById('typebox').reset();
+    return false;
+}
+
+
+
+var membrs=[];
+var i=0;
+var gnm="";
+//sets group name variable
+function getname() {
+    gnm=grp_name.elements['gname'].value;
+    document.getElementById('list').innerHTML=gnm;
+   // window.location.href="create_group.php?gn="+gnm+"&admin="+membrs[j];
+    return false;
+}
+
+//add members of the group to an array
+function add() {
+  //  var membrs=[];
+    var username=members.elements['memid'].value;
+    membrs.push(username);
+    document.getElementById('added').innerHTML=document.getElementById('added').innerHTML+","+membrs[i];
+    i=i+1;
+    document.getElementById('members').reset();
+
+    return false;
+}
+
+//create group
+function create() { 
+for(j=0;j<i;j++) {
+    document.getElementById('list').innerHTML=document.getElementById('list').innerHTML +gnm+" "+membrs[j];
+  //  window.location.href="create_group.php?gn="+gnm+"&member="+membrs[j];
+}
+//reset global variables
+membrs=[];
+i=0;
+gnm="";
+return false;
+}
+
+$(document).ready( function () {
+  show();
+});
+
+function show() {
+    // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+
+    var url ="existing_groups.php";
+    
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("list").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(); // Actually execute the request
+    document.getElementById("list").innerHTML = "";
+}
+
+function expand1() {
+
+  // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+
+    var url ="showfrnds.php";
+    
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("frnds").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(); // Actually execute the request
+    document.getElementById("frnds").innerHTML = "";
+}
+
+function contract1() {
+
+  // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+
+    var url ="showfrnds1.php";
+    
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            document.getElementById("frnds").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(); // Actually execute the request
+    document.getElementById("frnds").innerHTML = "";
+}

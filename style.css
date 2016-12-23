@@ -1,0 +1,80 @@
+body {
+	background-color:#e3f2fd; 
+	background-size: cover; 
+}
+/*
+#home {
+	background:url("https://static.pexels.com/photos/34051/pexels-photo.jpg");
+	background-size: cover;
+}*/
+/*
+#grp_enter {
+	background:url("https://static.pexels.com/photos/2564/typography-white-door-fence.jpg");
+	background-size: cover;
+}
+*/
+/*
+#profile {
+	background:url("https://static.pexels.com/photos/64777/pexels-photo-64777.jpeg");
+	background-size: cover;		
+}*/
+span{
+	color:red;
+}
+
+div.sgn{
+	margin-top:30px;
+	margin-left:450px;
+	margin-right:-100px;
+	margin-bottom:20px;
+	position:absolute;
+}
+
+.login{
+	z-index:-1;
+}
+
+nav,p,h5,h4 {
+	font-family:'Ubuntu';
+}
+#existing{
+	margin-left: 40px;
+	margin-top:35px;
+}
+#cng{
+	margin-left: 80px;
+	margin-top:40px;
+}
+#chat_head {
+	margin-left:5px;
+	width:300;
+}
+
+#text_slide {
+	margin-left:450px;
+}
+
+#home_content {
+	margin-top:150px;
+}
+
+#instructions {
+	font-family:'Ubuntu';
+	margin-left:70px;
+}
+
+#login {
+	opacity:0.9;
+	margin-left:200px;
+	margin-right:50px;
+}
+
+#def_dp{
+	width:205px;
+}
+
+#home_navbar{
+	opacity:0.5;
+	margin-top:-35px;
+}
+
